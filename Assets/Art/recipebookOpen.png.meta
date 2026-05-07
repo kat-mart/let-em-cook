@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9ef99f6ea0a242140b8b594973c97058
+guid: 889a4a89059f12d41bedb4ecd43eb1a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3036525852646132209
-    second: recipebook_0
+      213: -2470921819216540385
+    second: recipebookOpen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: recipebook_0
+      name: recipebookOpen_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 23
-        width: 250
-        height: 303
+        x: 18
+        y: 22
+        width: 316
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f9434ebc28e32a20800000000000000
-      internalID: 3036525852646132209
+      spriteID: f1d06d962b585bdd0800000000000000
+      internalID: -2470921819216540385
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      recipebook_0: 3036525852646132209
+      recipebookOpen_0: -2470921819216540385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

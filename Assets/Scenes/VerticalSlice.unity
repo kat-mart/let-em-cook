@@ -612,8 +612,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 468320083}
+  - component: {fileID: 468320084}
   m_Layer: 7
-  m_Name: Placers
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,6 +635,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468320084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468320081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccea6a7318e34d43b4b0ba65ac1f213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseDetection
+  Recipebook: {fileID: 859191887}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 859191886}
   - component: {fileID: 859191885}
+  - component: {fileID: 859191887}
   m_Layer: 0
   m_Name: RecipeBook
   m_TagString: Untagged
@@ -921,12 +936,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3036525852646132209, guid: c05559d5012399246aa0463119ace927, type: 3}
+  m_Sprite: {fileID: 3036525852646132209, guid: 9ef99f6ea0a242140b8b594973c97058, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.18, y: 2.78}
+  m_Size: {x: 2.5, y: 3.03}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -946,6 +961,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &859191887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859191884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac79b42059386845a60427673e0a1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Recipebook
+  openRecipeBookSprite: {fileID: -2470921819216540385, guid: 889a4a89059f12d41bedb4ecd43eb1a7, type: 3}
+  closedRecipeBookSprite: {fileID: 3036525852646132209, guid: 9ef99f6ea0a242140b8b594973c97058, type: 3}
 --- !u!1 &1059390499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,7 +2442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e898e1e3a80a9244da2ca9233d885109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game
-  FoodPlacer: {fileID: 0}
 --- !u!4 &1523870480
 Transform:
   m_ObjectHideFlags: 0
