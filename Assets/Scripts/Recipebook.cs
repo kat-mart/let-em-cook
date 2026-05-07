@@ -6,6 +6,7 @@ public class Recipebook : MonoBehaviour
     public Sprite closedRecipeBookSprite;
     private bool bookIsOpen = false;
     private SpriteRenderer spriteRenderer;
+    private Vector3 SpritePosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +23,11 @@ public class Recipebook : MonoBehaviour
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    
+    public Vector3 GetSpritePosition()
+    {
+        return transform.position;
     }
     
     // when we click on the recipe book it changes art to open book and our recipe shows
