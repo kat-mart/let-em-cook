@@ -1,11 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
-public class Food : TimedObject
+public class Food : MonoBehaviour
 {
-    public void Start()
+    public float respawnTimeInSeconds = 3f;
+
+    public void RespawnObject(GameObject bubble)
     {
-        //secondsOnScreen = GameParameters.MoonshineSecondsOnScreen;
-        secondsOnScreen = 10f;
-        base.Start();
+        StartCoroutine(Respawn(bubble));
+    }
+
+    private IEnumerator Respawn(GameObject bubble)
+    {
+        bubble.SetActive(false);
+
+        yield return new WaitForSeconds(respawnTimeInSeconds);
+
+        bubble.SetActive(true);
     }
 }
