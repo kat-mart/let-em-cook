@@ -8,8 +8,8 @@ public static class GameParameters
 {
     // --- Player Movement ---
     public static float PlayerSpeed = 8f;
-    public static float PlayerJumpingPower = 8f;
-    public static float PlayerDoubleJumpPower = 10f;
+    public static float PlayerJumpingPower = 6f;
+    public static float PlayerDoubleJumpPower = 8f;
 
     // Multiplies gravity while falling so the jump arc feels snappy rather than floaty.
     // Higher values make the fall faster. 1.0 means normal gravity.

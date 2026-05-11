@@ -15,9 +15,7 @@ public class PlayerMovement : MonoBehaviour
     
     private PlayerCollision playerCollision;
     private PlayerStateMachine playerStateMachine;
-    private PlayerAnimator playerAnimator;
-    private PlayerFX playerFX;
-    private JumpSquashStretch jumpSquashStretch;
+    
 
     private void Start()
     {
@@ -25,9 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
         playerCollision = GetComponent<PlayerCollision>();
         playerStateMachine = GetComponent<PlayerStateMachine>();
-        playerAnimator = GetComponent<PlayerAnimator>();
-        playerFX = GetComponent<PlayerFX>();
-        jumpSquashStretch = GetComponentInChildren<JumpSquashStretch>();
     }
 
     private void Update()
@@ -79,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
             // We immediately consume the double jump so it can only be used once.
             Rigidbody.linearVelocity = new Vector2(Rigidbody.linearVelocity.x, GameParameters.PlayerDoubleJumpPower);
             canDoubleJump = false;
-            //jumpSquashStretch.OnJumped();
             StartJumpAnimation();
         }
     }
