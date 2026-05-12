@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Bubble
+  - Stove
   layers:
   - Default
   - TransparentFX
