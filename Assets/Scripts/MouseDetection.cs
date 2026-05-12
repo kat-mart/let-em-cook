@@ -5,6 +5,7 @@ public class MouseDetection : MonoBehaviour
 {
     public Recipebook Recipebook;
     public Stove Stove;
+    public CuttingBoard CuttingBoard;
 
     void Update()
     {
@@ -48,7 +49,8 @@ public class MouseDetection : MonoBehaviour
             else if (hit.gameObject == Stove.gameObject)
             {
                 Stove.MouseClickDetected();
-            }
+            }else if (hit.gameObject == CuttingBoard.gameObject)
+                CuttingBoard.MouseClickDetected();
         }
     }
     
