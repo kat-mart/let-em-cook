@@ -7,6 +7,7 @@ public class Recipebook : MonoBehaviour
     private bool bookIsOpen = false;
     private SpriteRenderer spriteRenderer;
     private Vector3 SpritePosition;
+    public Recipe Recipe;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,10 +50,17 @@ public class Recipebook : MonoBehaviour
         if (!bookIsOpen)
         {
             ChangeToOpenBookSprite();
+            ShowRecipe();
         }
         else
         {
             ChangeToClosedRecipeBookSprite();
+            Recipe.CloseRecipe();
         }
+    }
+
+    private void ShowRecipe()
+    {
+        Recipe.ShowPage();
     }
 }
