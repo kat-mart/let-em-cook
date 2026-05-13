@@ -30,5 +30,9 @@ public class Player : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
-    
+
+    public Vector3 GetPlayerPosition()
+    {
+        return  transform.position;
+    }
 }

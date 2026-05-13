@@ -1308,6 +1308,8 @@ MonoBehaviour:
   Recipebook: {fileID: 859191887}
   Stove: {fileID: 1254534940}
   CuttingBoard: {fileID: 912759802}
+  Player: {fileID: 189427585}
+  interactionRange: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
