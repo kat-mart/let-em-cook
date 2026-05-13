@@ -7,7 +7,7 @@ using UnityEngine;
 public static class GameParameters
 {
     // --- Player Movement ---
-    public static float PlayerSpeed = 8f;
+    public static float PlayerSpeed = 6f;
     public static float PlayerJumpingPower = 6f;
     public static float PlayerDoubleJumpPower = 8f;
 
