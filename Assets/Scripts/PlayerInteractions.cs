@@ -37,9 +37,11 @@ public class PlayerInteractions : MonoBehaviour
 
     private void DropTile()
     {
+        int slotIndex = -1;
         // figure out tile to place w/ mouse detection
-        if (InteractTilemap == null || TileToPlace == null)
+        if (InteractTilemap == null)
         {
+            Debug.Log("early return");
             return;
         }
         Vector3Int  cellPosition = InteractTilemap.WorldToCell(transform.position);
@@ -47,13 +49,18 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (Inventory.getInventory()[i] != null)
             {
+                Debug.Log("last full slot is slot: "  + Inventory.getInventory()[i]);
+                slotIndex = i;
+                TileBase tileToPlace = Inventory.getInventory()[i];
                 if (CellEmpty(cellPosition))
                 {
-                    InteractTilemap.SetTile(cellPosition, Inventory.getInventory()[i]);
+                    InteractTilemap.SetTile(cellPosition, tileToPlace);
+                    Inventory.getInventory()[i] = null;
                 }
                 break;
             }
         }
+        Inventory.RemoveItemFromInventorySlot(slotIndex);
     }
 
     private bool CellEmpty(Vector3Int cellPosition)

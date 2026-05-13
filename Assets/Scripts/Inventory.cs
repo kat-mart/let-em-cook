@@ -47,6 +47,7 @@ public class Inventory : MonoBehaviour
         // find index of corresponding box
         TileBase tileToPlace = inventory[i];
         inventory[i] = null;
+        InventoryOverlay.SetTile(InventorySlots[i].GetInventorySlotPosition(), null);
         // empty slot at index
         return tileToPlace; // for PlayerInteractions to know which tile to place
     }
