@@ -5,17 +5,17 @@ public class Food : MonoBehaviour
 {
     public float respawnTimeInSeconds = 3f;
 
-    public void RespawnObject(GameObject bubble)
+    public void RespawnObject(GameObject Ingredient)
     {
-        StartCoroutine(Respawn(bubble));
+        StartCoroutine(Respawn(Ingredient));
     }
 
-    private IEnumerator Respawn(GameObject bubble)
+    private IEnumerator Respawn(GameObject Ingredient)
     {
-        bubble.SetActive(false);
+        Ingredient.SetActive(false);
 
         yield return new WaitForSeconds(respawnTimeInSeconds);
 
-        bubble.SetActive(true);
+        Ingredient.SetActive(true);
     }
 }

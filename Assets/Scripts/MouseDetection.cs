@@ -6,6 +6,8 @@ public class MouseDetection : MonoBehaviour
     public Recipebook Recipebook;
     public Stove Stove;
     public CuttingBoard CuttingBoard;
+    public Player Player;
+    [SerializeField] private float interactionRange = 2f;
 
     void Update()
     {
@@ -41,17 +43,36 @@ public class MouseDetection : MonoBehaviour
     {
         Collider2D hit = CheckIfMouseTouchedCollider();
         if (hit != null)
-        { 
-            if (hit.gameObject == Recipebook.gameObject)
-            {
-                Recipebook.MouseClickDetected();
-            }
-            else if (hit.gameObject == Stove.gameObject)
-            {
-                Stove.MouseClickDetected();
-            }else if (hit.gameObject == CuttingBoard.gameObject)
-                CuttingBoard.MouseClickDetected();
+        {
+            ObjectClickedActions(hit);
         }
     }
-    
+
+    private void ObjectClickedActions(Collider2D hit)
+    {
+        Vector3 playerPos = Player.GetPlayerPosition();
+
+        if (hit.gameObject == Recipebook.gameObject)
+        {
+            Recipebook.MouseClickDetected();
+        }
+        else
+        {
+            // Distance from player to clicked object
+            float distance = Vector3.Distance(playerPos, hit.transform.position);
+
+            // Only interact if close enough
+            if (distance <= interactionRange)
+            {
+                if (hit.gameObject == Stove.gameObject)
+                {
+                    Stove.MouseClickDetected();
+                }
+                else if (hit.gameObject == CuttingBoard.gameObject)
+                {
+                    CuttingBoard.MouseClickDetected();
+                }
+            }
+        }
+    }
 }

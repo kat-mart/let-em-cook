@@ -3,22 +3,31 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-    public Food Food;
-    public float respawnTimeInSeconds = 3f;
+    public Food Ingredient;
+    private SpriteRenderer spriteRenderer;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     public void CollectItem(Collider other)
     {
-        if (other.CompareTag("Bubble"))
+        if (other.CompareTag("Ingredient"))
         {
             
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Bubble"))
+    { // Collide with ingredient or kitchen utility
+        if (other.CompareTag("Ingredient"))
         {
-            Food.RespawnObject(other.gameObject);
+            Ingredient.RespawnObject(other.gameObject);
         }
+    }
+
+    public Vector3 GetPlayerPosition()
+    {
+        return spriteRenderer.transform.position;
     }
     
 }
