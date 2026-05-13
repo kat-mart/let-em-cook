@@ -51,6 +51,7 @@ public class MouseDetection : MonoBehaviour
                 Stove.MouseClickDetected();
             }else if (hit.gameObject == CuttingBoard.gameObject)
                 CuttingBoard.MouseClickDetected();
+            
         }
     }
     

@@ -5,7 +5,6 @@ public class PlayerCollision : MonoBehaviour
     public BoxCollider2D GroundCollider;
     public LayerMask GroundLayer;
     public LayerMask OneWayPlatformLayer;
-    public LayerMask EnemyLayer;
     
     private Rigidbody2D rigidBody;
     private PlayerStateMachine playerStateMachine;
@@ -44,24 +43,6 @@ public class PlayerCollision : MonoBehaviour
         int oneWayPlatformLayerIndex = GetLayerIndex(OneWayPlatformLayer);
 
         Physics2D.IgnoreLayerCollision(playerLayerIndex, oneWayPlatformLayerIndex, IsRising());
-    }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Ignore the collision if it wasn't with an enemy
-        if (!IsEnemyContact(collision))
-            return;
-
-        // Pass the enemy's position to the state machine so it can calculate
-        // the knockback direction (away from wherever the enemy was)
-        Vector2 enemyPosition = collision.transform.position;
-        playerStateMachine.OnHitByEnemy(enemyPosition);
-    }
-
-    private bool IsEnemyContact(Collision2D collision)
-    {
-        int layer = 1 << collision.gameObject.layer;
-        return (layer & EnemyLayer) != 0;
     }
     
     private int GetLayerIndex(LayerMask mask)

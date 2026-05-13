@@ -4,22 +4,29 @@ using UnityEngine.Tilemaps;
 public class PlayerInteractions : MonoBehaviour
 {
     public Tilemap InteractTilemap;
-    public TileBase TileToPlace; // will change based on player inventory 
+    public Inventory Inventory;
     
-    public void OnPickup()
+    private TileBase TileToPlace; // will change based on player inventory 
+    
+    public TileBase OnPickup()
     {
         Debug.Log("Picked up");
-        PickupTile();
+        return PickupTile();
     }
 
-    private void PickupTile()
+    private TileBase PickupTile()
     {
         if (InteractTilemap == null )
         {
-            return;
+            return null;
         }
         Vector3Int cellPosition = InteractTilemap.WorldToCell(transform.position);
-        InteractTilemap.SetTile(cellPosition, null);
+        if (InteractTilemap.GetTile(cellPosition) != null)
+        {
+            Inventory.AddItemToEmptyInventorySlot(InteractTilemap.GetTile(cellPosition));
+            InteractTilemap.SetTile(cellPosition, null);
+        }
+        return InteractTilemap.GetTile(cellPosition);
     }
 
     public void OnDrop()
@@ -30,14 +37,22 @@ public class PlayerInteractions : MonoBehaviour
 
     private void DropTile()
     {
+        // figure out tile to place w/ mouse detection
         if (InteractTilemap == null || TileToPlace == null)
         {
             return;
         }
         Vector3Int  cellPosition = InteractTilemap.WorldToCell(transform.position);
-        if (CellEmpty(cellPosition))
+        for (int i = Inventory.getInventory().Length - 1; i >= 0; i--)
         {
-            InteractTilemap.SetTile(cellPosition, TileToPlace);
+            if (Inventory.getInventory()[i] != null)
+            {
+                if (CellEmpty(cellPosition))
+                {
+                    InteractTilemap.SetTile(cellPosition, Inventory.getInventory()[i]);
+                }
+                break;
+            }
         }
     }
 
