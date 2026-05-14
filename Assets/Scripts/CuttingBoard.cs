@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Collections;
 
 public class CuttingBoard : MonoBehaviour
 {
-    public bool isBoardClicked = false;
+    private bool isBoardClicked = false;
+
+    private float timeToChop = 2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +21,24 @@ public class CuttingBoard : MonoBehaviour
     public void MouseClickDetected()
     {
         isBoardClicked = true;
-        print("Clicked Cutting Board");
+        ChopFood();
+    }
+
+    private void ChopFood()
+    {
+        print("Chopping Food");
+        StartCoroutine(StartChopping());
+    }
+
+    private IEnumerator StartChopping()
+    {
+        yield return new WaitForSeconds(timeToChop);
+        DoneChoppingFood();
+    }
+
+    private void DoneChoppingFood()
+    {
         isBoardClicked = false;
+        print("Food CHOPPED");
     }
 }

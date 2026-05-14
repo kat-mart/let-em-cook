@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] private float interactionRange = 2f;
+    [SerializeField] private float interactionRange = 1f;
 
     private SpriteRenderer spriteRenderer;
     private Transform player;

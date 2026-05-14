@@ -7,7 +7,7 @@ public class MouseDetection : MonoBehaviour
     public Stove Stove;
     public CuttingBoard CuttingBoard;
     public Player Player;
-    [SerializeField] private float interactionRange = 2f;
+    [SerializeField] private float interactionRange = 1f;
 
     void Update()
     {
