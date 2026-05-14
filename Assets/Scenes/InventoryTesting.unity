@@ -4544,6 +4544,7 @@ GameObject:
   - component: {fileID: 1254534938}
   - component: {fileID: 1254534937}
   - component: {fileID: 1254534940}
+  - component: {fileID: 1254534941}
   m_Layer: 0
   m_Name: Stove
   m_TagString: Untagged
@@ -4683,6 +4684,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc230e5fb4463f94c868d4bfd03128e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stove
+--- !u!114 &1254534941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254534936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03fb8d51fd199840ba9e019cf135421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactionRange: 2
 --- !u!1 &1320545550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6624,7 +6638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2102524080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6708,7 +6722,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 11
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4026170856851557448, guid: 4e1a6fe797b30334880d7a12be96feba, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6716,7 +6730,7 @@ SpriteRenderer:
   m_Size: {x: 3.22, y: 2.38}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &2106720867
 PrefabInstance:
